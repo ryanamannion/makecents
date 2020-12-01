@@ -1,4 +1,4 @@
-# MakeCents - A dialogue system for coin collectors
+# MakeCents: A dialogue system for coin collectors
 
 ![makecents_logo](MakeCents_logo.png)
 
