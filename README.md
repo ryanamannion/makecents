@@ -1,2 +1,5 @@
-# MakeCents - A dialogue system for interfacing with your coin collection
-Make Cents is a dialog system to interface with a collector's coin collection. Ask it about coin prices, or link it to your collection to inquire about incomplete sets and total value
+# MakeCents - A dialogue system for coin collectors
+
+![makecents_logo](MakeCents_logo.png)
+
+MakeCents is a dialogue system designed to help coin collectors quickly query coin prices. 
