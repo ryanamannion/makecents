@@ -21,7 +21,7 @@ year_regex = re.compile(r'\(?(\d\d\d\d)\)?(/\(?\d+\)?)*')
 #   #38975: 1825/4/(2) 25C Browning 2
 #   #715594: (2019) 1C Blank Planchet Explore & Discover Set, RD
 
-mint_pattern = r'-((P|D|S|CC|O|W|M|A|H)(/(P|D|S|CC|O|W|M|A|H)))'
+mint_pattern = r'-((P|D|S|CC|O|W|M|A|H)(/(P|D|S|CC|O|W|M|A|H))?)'
 mint_regex = re.compile(mint_pattern)
 mint_regex_ci = re.compile(mint_pattern, re.IGNORECASE)
 # mint mark reference: en.wikipedia.org/wiki/Historical_United_States_mints
