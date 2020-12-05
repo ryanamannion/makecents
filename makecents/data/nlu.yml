@@ -9,6 +9,7 @@ nlu:
     - hello there
     - good morning
     - good evening
+    - good afternoon
     - moin
     - hey there
     - let's go
@@ -16,10 +17,11 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - whats up
+    - howdy
 
 - intent: goodbye
   examples: |
-    - good afternoon
     - cu
     - good by
     - cee you later
@@ -39,6 +41,7 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - sure
 
 - intent: deny
   examples: |
@@ -50,43 +53,40 @@ nlu:
     - no way
     - not really
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: coin_query
+  examples: |
+    - how much is a [1909-S VDB Cent]{"entity": "coin"} worth?
+    - is a [1934-S Peace dollar]{"entity": "coin"} worth a lot?
+    - [1940-S Mercury Dime]{"entity": "coin"} price please
+    - [1939 dime]{"entity": "coin"}
+    - [2007 penny]{"entity": "coin"}
+    - what is the price of an [1864 2c piece]{"entity": "coin"}
+    - show me the price of a [1973 $1 ike]{"entity": "coin"}
+    - can I see the information for an [1872 3c]{"entity": "coin"}
+    - whats a [1964 dime]{"entity": "coin"} worth
+    - show me the [1874-S trade dollar]{"entity": "coin"}
+    - how much can I get for a [1910 5c]{"entity": "coin"}
+    - [1964 nickel]{"entity": "coin"}
+    - how much is a nice [1997 quarter]{"entity": "coin"} worth
+    - [1853 three cent silver]{"entity": "coin"}
+    - [1889 Morgan silver dolalr]{"entity": "coin"}
+    - [1961-P Franklin half dollar]{"entity": "coin"}
+    - [1947-P walking libery 50c]{"entity": "coin"}
+    - [1942 war nickel]{"entity": "coin"}
+    - [1943 1c]{"entity": "coin"}
+    - [1853 3cs]{"entity": "coin"}
+    - [1854-D $3]{"entity": "coin"}
+    - [1912-D Indian $5]{"entity": "coin"}
+    - [1800 1/2c]{"entity": "coin"}
+    - [1858 1C Small Letters]{"entity": "coin"}
+    - [1916 5C Doubled Die Obverse]{"entity": "coin"}
+    - [1917-D 10 full bands]{"entity": "coin"}
+    - [1923-D mercury dime full bands]{"entity": "coin"}
+    - [1946-S jefferson nickel]{"entity": "coin"}

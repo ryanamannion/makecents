@@ -6,20 +6,23 @@ intents:
 - goodbye
 - affirm
 - deny
-- mood_great
-- mood_unhappy
 - bot_challenge
+- coin_query
+entities:
+- coin
 responses:
   utter_greet:
-  - text: Hey! How are you?
-  utter_cheer_up:
-  - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
-  utter_did_that_help:
-  - text: Did that help you?
-  utter_happy:
-  - text: Great, carry on!
+  - text: Hi! Welcome to MakeCents. I can help you quickly look for coin prices!
+  utter_get_started:
+  - text: You can get started by typing the name of any US coin! (e.g. 1909-S VDB
+      Cent)
+  utter_search_help:
+  - text: 'TIP: Make sure to always include a year (YYYY) and a denomination (e.g.
+      1C, cent, penny, etc.). You can also specify the mint with a hyphen after the
+      year (YYYY-M, e.g. 1909-S)'
   utter_goodbye:
-  - text: Bye
+  - text: Goodbye
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: I am indeed a bot! I was built by Ryan Mannion and I am powered by Rasa.
+  utter_query_coin:
+  - text: this is a placeholder for a coin query.
