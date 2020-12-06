@@ -9,7 +9,31 @@ stories:
   - action: utter_get_started
   - action: utter_search_help
   - intent: coin_query
-  - action: utter_query_coin
+    entities:
+    - coin: 1925 buffalo nickel
+  - action: action_return_price
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_get_started
+  - action: utter_search_help
+  - intent: coin_query
+    entities:
+    - coin: 1975 quarter
+  - action: action_return_price
+
+- story: Story from Conversation ID ddbaa7f46ff6431aaca7ca6aa4222de4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_get_started
+  - action: utter_search_help
+  - intent: coin_query
+    entities:
+    - coin: 1909-S VDB Cent
+  - action: action_return_price
 
 - story: bot challenge
   steps:

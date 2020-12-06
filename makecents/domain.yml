@@ -8,6 +8,7 @@ intents:
 - deny
 - bot_challenge
 - coin_query
+- query_coin
 entities:
 - coin
 responses:
@@ -26,3 +27,5 @@ responses:
   - text: I am indeed a bot! I was built by Ryan Mannion and I am powered by Rasa.
   utter_query_coin:
   - text: this is a placeholder for a coin query.
+actions:
+- action_return_price

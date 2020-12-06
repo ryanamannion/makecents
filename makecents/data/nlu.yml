@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,10 +15,8 @@ nlu:
     - hey dude
     - goodmorning
     - goodevening
-    - good afternoon
     - whats up
     - howdy
-
 - intent: goodbye
   examples: |
     - cu
@@ -32,7 +29,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -42,7 +38,6 @@ nlu:
     - that sounds good
     - correct
     - sure
-
 - intent: deny
   examples: |
     - no
@@ -52,41 +47,39 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
 - intent: coin_query
   examples: |
-    - how much is a [1909-S VDB Cent]{"entity": "coin"} worth?
-    - is a [1934-S Peace dollar]{"entity": "coin"} worth a lot?
-    - [1940-S Mercury Dime]{"entity": "coin"} price please
-    - [1939 dime]{"entity": "coin"}
-    - [2007 penny]{"entity": "coin"}
-    - what is the price of an [1864 2c piece]{"entity": "coin"}
-    - show me the price of a [1973 $1 ike]{"entity": "coin"}
-    - can I see the information for an [1872 3c]{"entity": "coin"}
-    - whats a [1964 dime]{"entity": "coin"} worth
-    - show me the [1874-S trade dollar]{"entity": "coin"}
-    - how much can I get for a [1910 5c]{"entity": "coin"}
-    - [1964 nickel]{"entity": "coin"}
-    - how much is a nice [1997 quarter]{"entity": "coin"} worth
-    - [1853 three cent silver]{"entity": "coin"}
-    - [1889 Morgan silver dolalr]{"entity": "coin"}
-    - [1961-P Franklin half dollar]{"entity": "coin"}
-    - [1947-P walking libery 50c]{"entity": "coin"}
-    - [1942 war nickel]{"entity": "coin"}
-    - [1943 1c]{"entity": "coin"}
-    - [1853 3cs]{"entity": "coin"}
-    - [1854-D $3]{"entity": "coin"}
-    - [1912-D Indian $5]{"entity": "coin"}
-    - [1800 1/2c]{"entity": "coin"}
-    - [1858 1C Small Letters]{"entity": "coin"}
-    - [1916 5C Doubled Die Obverse]{"entity": "coin"}
-    - [1917-D 10 full bands]{"entity": "coin"}
-    - [1923-D mercury dime full bands]{"entity": "coin"}
-    - [1946-S jefferson nickel]{"entity": "coin"}
+    - how much is a [1909-S VDB Cent, RD](coin) worth?
+    - is a [1934-S Peace dollar](coin) worth a lot?
+    - [1940-S Mercury Dime, FB](coin) price please
+    - [1939 full bands dime](coin)
+    - [2007 penny](coin)
+    - what is the price of an [1864 2c piece](coin)
+    - show me the price of a [1973 $1 ike](coin)
+    - can I see the information for an [1872 3c](coin)
+    - whats a [1964 dime](coin) worth
+    - show me the [1874-S trade dollar](coin)
+    - how much can I get for a [1910 5c](coin)
+    - [1964 nickel](coin)
+    - how much is a nice [1997 quarter](coin) worth
+    - [1853 three cent silver](coin)
+    - [1889 Morgan silver dolalr](coin)
+    - [1961-P Franklin half dollar](coin)
+    - [1947-P walking libery 50c](coin)
+    - [1942 war nickel](coin)
+    - [1943 1c](coin)
+    - [1853 3cs](coin)
+    - [1854-D $3](coin)
+    - [1912-D Indian $5](coin)
+    - [1800 1/2c](coin)
+    - [1858 1C Small Letters](coin)
+    - [1916 5C Doubled Die Obverse](coin)
+    - [1917-D 10 full bands](coin)
+    - [1923-D mercury dime full bands](coin)
+    - [1946-S jefferson nickel](coin)
