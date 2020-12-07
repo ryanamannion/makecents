@@ -6,3 +6,5 @@
 <!-- Coin graphic from https://etc.usf.edu/clipart/44400/44401/44401_penny.htm -->
 
 MakeCents is a dialogue system designed to help coin collectors quickly query coin prices. 
+
+MakeCents is currently under development. Check back in a few days for an initial release
