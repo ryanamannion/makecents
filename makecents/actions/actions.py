@@ -60,30 +60,31 @@ class ActionReturnPrice(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        coin_entities = tracker.get_latest_entity_values("coin")
-        *_, last = coin_entities
+        coin_entity = tracker.latest_message['entities']
+        message = tracker.latest_message['text']
 
-        validated_query = pcgs_query.validate_query(last, verbose=False)
+        validated_query = pcgs_query.validate_query(message, verbose=False)
         price_guide = most_recent_guide()
 
         results = pcgs_query.query_price_guide(validated_query, price_guide)
 
-        if len(results) == 0:
+        if results is None:
             msg = "I'm sorry, I could not find a coin matching your query."
             dispatcher.utter_message(text=msg)
             dispatcher.utter_message(template='utter_search_help')
         elif len(results) == 1:
             result = results[0]
             prices = utils.price_table(result['desig'], result['prices'])
+            msg = f"Here are the prices for {result['description']}:"
+            dispatcher.utter_message(text=msg)
             dispatcher.utter_message(text=prices)
         elif len(results) > 1:
-            """
-            User query returns more than one coin result:
-                - tell user the results
-                - give user buttons
-                - buttons return exact description of coin, which should return
-                  just that coin with pcgs_query.query_price_guide()
-            """
+            # User query returns more than one coin result:
+            #     - tell user the results
+            #     - give user buttons
+            #     - buttons return exact description of coin, which should return
+            #       just that coin with pcgs_query.query_price_guide()
+
             dispatcher.utter_message("I found multiple results for your query.")
             descriptions = [x['description'] for x in results]
             buttons = []
