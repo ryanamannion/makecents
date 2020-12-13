@@ -1,0 +1,8 @@
+#!/bin/bash
+
+rasa run actions & 
+ACT_PROC_ID=$!
+rasa x &
+X_PROC_ID=$!
+wait
+kill $ACT_PROC_ID
