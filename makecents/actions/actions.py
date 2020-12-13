@@ -8,6 +8,7 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 import os
+from PIL import Image, ImageDraw, ImageFont
 import glob
 from datetime import datetime, date, time
 import pickle
@@ -48,6 +49,27 @@ def most_recent_guide():
     return price_guide
 
 
+def tbl_to_image(tbl, path='./price_utilities/table.png'):
+    """
+    Turns string for a table representation of prices into a png
+    :param tbl: string table
+    :param path: save name of table image
+    :return path: path to table image
+    """
+    font = ImageFont.truetype('./price_utilities/VeraMono.ttf', 14)
+    table_width, table_len = font.getsize_multiline(tbl)
+    # add 10 pixels for border
+    image_size = (table_width, table_len)
+    # make new image background for font, white
+    img = Image.new('RGB', image_size, color=(255, 255, 255))
+    draw_layer = ImageDraw.Draw(img)
+    anchor = (10, 10)
+    text_color = (0, 0, 0)
+    draw_layer.multiline_text(xy=anchor, text=tbl, fill=text_color)
+    img.save(path)
+    return path
+
+
 class ActionReturnPrice(Action):
 
     # def __init__(self):
@@ -56,9 +78,9 @@ class ActionReturnPrice(Action):
     def name(self) -> Text:
         return "action_return_price"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    async def run(self, dispatcher: CollectingDispatcher,
+                  tracker: Tracker,
+                  domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         coin_entity = tracker.latest_message['entities']
         message = tracker.latest_message['text']
@@ -75,9 +97,16 @@ class ActionReturnPrice(Action):
         elif len(results) == 1:
             result = results[0]
             prices = utils.price_table(result['desig'], result['prices'])
+            price_table_img_path = tbl_to_image(prices)
             msg = f"Here are the prices for {result['description']}:"
-            dispatcher.utter_message(text=msg)
-            dispatcher.utter_message(text=prices)
+            if result['image']:
+                image_path, image_description = result["image"]
+                dispatcher.utter_message(text=msg,
+                                         image=image_path)
+            else:
+                dispatcher.utter_message(text=msg)
+            dispatcher.utter_message(text=prices,
+                                     image="price_utilities/table.png")
         elif len(results) > 1:
             # User query returns more than one coin result:
             #     - tell user the results

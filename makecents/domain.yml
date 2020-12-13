@@ -24,7 +24,8 @@ responses:
   utter_goodbye:
   - text: Goodbye
   utter_iamabot:
-  - text: I am indeed a bot! I was built by Ryan Mannion and I am powered by Rasa.
+  - image: http://images.pcgs.com/CoinFacts/34015336_77365055_800x800.jpg
+    text: I am indeed a bot! I was built by Ryan Mannion and I am powered by Rasa.
   utter_query_coin:
   - text: this is a placeholder for a coin query.
 actions:
