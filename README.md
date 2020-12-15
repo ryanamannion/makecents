@@ -8,3 +8,22 @@
 MakeCents is a dialogue system designed to help coin collectors quickly query coin prices. 
 
 MakeCents is currently under development. Check back in a few days for an initial release
+
+# Installation and Testing Instructions
+
+1. Activate environment
+
+2. `pcgs_scraper` package
+	1. download the latest release at `https://github.com/ryanamannion/pcgs_scraper/releases`
+	2. `pip install path/to/pcgs_scraper-X.Y.Z.tar.gz`
+
+3. Other dependencies
+	1. `pip install -r requirements.txt`
+	2. `pip list | grep rasa` should reveal:
+		* `rasa 2.1.3`
+		* `rasa-x`
+		* `rasa-sdk`
+
+4. Change directories to `makecents`
+
+5. run `source ./makecents-test` or `. ./makecents-test`
