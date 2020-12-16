@@ -7,8 +7,6 @@
 
 MakeCents is a dialogue system designed to help coin collectors quickly query coin prices. 
 
-MakeCents is currently under development. Check back in a few days for an initial release
-
 ## Installation and Testing Instructions
 
 1. clone repo and cd into it
