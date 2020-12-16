@@ -14,8 +14,8 @@ MakeCents is a dialogue system designed to help coin collectors quickly query co
 2. Create/ activate your environment
 
 3. `pcgs_scraper` package
-	1. make `latest_release` executable with `chmod +x latest_release`
-	2. run `./latest_release`
+	1. make `latest-release` executable with `chmod +x latest-release`
+	2. run `./latest-release`
 	3. install latest version with `pip install pcgs_scraper-releases/pcgs_scraper-vX.Y.Z.tar.gz`
 
 4. Other dependencies
