@@ -17,6 +17,7 @@ nlu:
     - goodevening
     - whats up
     - howdy
+    - heloo
 - intent: goodbye
   examples: |
     - cu
@@ -29,15 +30,20 @@ nlu:
     - see you around
     - bye bye
     - see you later
-- intent: affirm
+- intent: thank
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-    - sure
+    - thanks
+    - thank you very much
+    - thx
+    - ty
+    - great, thanks
+    - thanks so much
+    - thankyou
+    - thank you!
+    - thanks, bye!
+    - thats great, thanks
+    - thank you
+    - thanks!
 - intent: deny
   examples: |
     - no
@@ -47,12 +53,22 @@ nlu:
     - don't like that
     - no way
     - not really
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - are you a bot
 - intent: coin_query
   examples: |
     - how much is a [1909-S VDB Cent, RD](coin) worth?
@@ -83,3 +99,143 @@ nlu:
     - [1917-D 10 full bands](coin)
     - [1923-D mercury dime full bands](coin)
     - [1946-S jefferson nickel](coin)
+    - [1909-S VDB 1C, RD](coin)
+    - how much a [1909-S vdb cent](coin) worth
+    - [1943 1C](coin)
+    - [1943 steel penny](coin)
+    - [1909-s vdb cent](coin)
+    - [1973-S 1C, RD](coin)
+    - what is the price of a [1973 penny](coin)
+    - [2007-P 25C Montana](coin)
+    - What is the price of a [2007 quarter](coin)
+    - [1942-P war nickel](coin)
+    - [1942-P 5C Type 2](coin)
+    - [1909-S vdb cent](coin) please
+    - [1909-S vdb cent](coin)
+    - [1909-S VDB cent](coin)
+    - what is the price of a [1909-S vdb cent](coin)
+    - [1973 1C, RD](coin)
+    - [1973 penny](coin)
+    - [1909-S indian cent](coin)
+    - [1942 nickel](coin)
+    - [1909-S vdb](coin)
+    - [1964 quarter](coin)
+    - [1975 25c](coin)
+    - [1975 quarter](coin)
+    - [1909-S 1C Indian, RB](coin)
+    - [1964 half dollar](coin)
+    - show me the price for a [1909-S vdb cent](coin)
+    - show me prices for a [1909-S vdb cent](coin)
+    - what is the price for a [1909-S vdb cent](coin)
+    - what is the price of a [1909-S VDB Cent](coin)
+    - what is the price of a [1909-S VDB cent](coin)
+    - how about a [1917-D 10c, full bands](coin)
+    - please get me the price for a [1864 3cs](coin)
+    - what is the price of an [1889 morgan silver dollar](coin)
+    - tell me about [quarters](coin)
+    - [1836 dime](coin)
+    - show me [1836 3cs](coin)
+    - how about [1964 quarters](coin)
+    - [1864-S 10C](coin)
+    - show me [1864 dimes](coin)
+    - [1997 1C, RD](coin)
+    - what is the price of a [1997 penny](coin)
+    - [1943-S 1C](coin)
+    - how about a [1943 penny](coin)
+    - [1942 1C, RD](coin)
+    - tell me about the [1942 steel penny](coin)
+    - [1993-P 10C](coin)
+    - [1993 dime](coin)
+    - what is the price of a [2003 dime](coin)
+    - [1997-D 25C](coin)
+    - what is the price of a [1997 quarter](coin)
+    - [1997-P 25C](coin)
+    - what is the price of a [1997](coin) coin
+    - [1943-D/D 1C](coin)
+    - ok tell me about the [1943 steel penny](coin)
+    - what is the price of a [2003 quarter](coin)
+    - what abouta  [2005 quarter](coin)
+    - hello, what is the price of a [1997 quarter](coin)
+    - [2003 quarters](coin)
+    - ok, well tell me the price of a [quarter](coin)
+- intent: options
+  examples: |
+    - what can you do
+    - what are my options
+    - what can you tell me
+    - what kinds of things can you do
+    - can you help me
+    - how can you help me
+    - what can I ask you
+    - what can you do for me
+    - what do you know
+    - what else can you do
+- intent: cancel
+  examples: |
+    - nevermind
+    - that is the wrong coin
+    - that is not what I was looking for
+    - wrong coin
+    - you are useless
+    - stop
+    - quit
+    - cancel
+    - end
+    - exit
+    - this did not help
+    - never mind
+- intent: unsure
+  examples: |
+    - what is the difference
+    - I dont know
+    - umm
+    - I'm not sure
+    - idk
+    - i dont really know
+    - do I have to
+    - whats the difference
+- intent: indifferent
+  examples: |
+    - I dont care
+    - either one
+    - it doesn't matter
+    - I'm indifferent
+    - you choose
+    - idc
+    - does it matter
+    - dealer's choice
+    - doesn't matter
+    - pick your poison
+    - doesn't matter to me
+    - I really dont care
+    - neither
+- intent: amused
+  examples: |
+    - wow, cool
+    - cool thanks
+    - cool
+    - very nice
+    - great
+    - sweet
+    - awesome
+    - oh wow
+    - very cool!
+    - well that's good to see!
+    - jackpot!
+    - that's great
+    - wow, thats a cool looking coin
+- intent: chitchat
+  examples: |
+    - how are you
+    - what time is it
+    - what is the weather
+    - do you get lonely
+    - what is your favorite color
+    - what is your favorite song
+    - turn up the volume
+    - can I order a sandwich
+    - can I order an ice cream
+    - can you take my order
+    - call me an uber
+    - add me a reminder
+    - add something to my calendar

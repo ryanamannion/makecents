@@ -1,8 +1,6 @@
 version: "2.0"
-
 stories:
-
-- story: happy path
+- story: happy path 0
   steps:
   - intent: greet
   - action: utter_greet
@@ -12,8 +10,7 @@ stories:
     entities:
     - coin: 1925 buffalo nickel
   - action: action_return_price
-
-- story: happy path
+- story: happy path 1
   steps:
   - intent: greet
   - action: utter_greet
@@ -23,7 +20,6 @@ stories:
     entities:
     - coin: 1975 quarter
   - action: action_return_price
-
 - story: Story from Conversation ID ddbaa7f46ff6431aaca7ca6aa4222de4
   steps:
   - intent: greet
@@ -34,8 +30,163 @@ stories:
     entities:
     - coin: 1909-S VDB Cent
   - action: action_return_price
-
 - story: bot challenge
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+- story: Story from Conversation ID 6eefda835524453583f14cdf41d31fd6
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_get_started
+  - action: utter_search_help
+  - intent: coin_query
+    entities:
+    - coin: 1997 quarter
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: 1997-D 25C
+  - action: action_return_price
+  - intent: thank
+  - action: utter_urwelcome
+  - intent: coin_query
+    entities:
+    - coin: 2003 dime
+  - action: action_return_price
+  - intent: cancel
+  - action: utter_goodbye
+- story: Story from Conversation ID 93bb871d963042a1a814a50121b78d79
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_get_started
+  - action: utter_search_help
+  - intent: coin_query
+    entities:
+    - coin: '1942'
+    - coin: penny
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: 1942 1C
+    - coin: RD
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: 1943 penny
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: 1943-S 1C
+  - action: action_return_price
+  - intent: thank
+  - action: utter_urwelcome
+- story: Story from Conversation ID 6d21253f84e144fd93dfee7d5b7aca98
+  steps:
+  - intent: options
+  - action: utter_abilities
+  - intent: coin_query
+    entities:
+    - coin: 1997 penny
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: 1997 1C
+    - coin: RD
+  - action: action_return_price
+  - intent: thank
+  - action: utter_urwelcome
+- story: Story from Conversation ID e30ddbaf5e4a46e89dc412a9e3729621
+  steps:
+  - action: utter_retry_choice
+  - intent: cancel
+  - action: utter_goodbye
+- story: Story from Conversation ID cb1c518a4eb8497fb83227ceb1de4433
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_get_started
+  - action: utter_search_help
+  - intent: coin_query
+    entities:
+    - coin: 1836 3cs
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: 1836 dime
+  - action: action_return_price
+  - intent: amused
+  - action: utter_also_amused
+  - intent: thank
+  - action: utter_urwelcome
+- story: Story from Conversation ID 352926415464489e8a81793d9b91824d
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_get_started
+  - action: utter_search_help
+  - intent: cancel
+  - action: utter_goodbye
+- story: Story from Conversation ID d66d389c24a742d590a9ce97b3240532
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_get_started
+  - action: utter_search_help
+  - intent: chitchat
+  - action: utter_stay_on_topic
+- story: Story from Conversation ID eb6ab238a05248d68a38e31ac8ecd6f8
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_get_started
+  - action: utter_search_help
+  - intent: coin_query
+    entities:
+    - coin: quarters
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: quarters
+    - coin: '1997'
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: 1997-D 25C
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: '2005'
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: 1909-s cent
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: 1909-S 1C Indian
+    - coin: RD
+  - action: action_return_price
+  - intent: thank
+  - action: utter_urwelcome
+  - intent: options
+  - action: utter_abilities
+  - intent: cancel
+  - action: utter_goodbye
+- story: Story from Conversation ID 0586b91273e544219d9ecfcc5654a7c9
+  steps:
+  - intent: unsure
+  - action: utter_help_unsure
+  - intent: thank
+  - action: utter_urwelcome
+  - intent: coin_query
+    entities:
+    - coin: 1943 steel penny
+  - action: action_return_price
+  - intent: coin_query
+    entities:
+    - coin: 1943-D/D 1C
+  - action: action_return_price
+  - intent: amused
+  - action: utter_also_amused
