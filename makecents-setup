@@ -1,0 +1,59 @@
+#!/bin/bash
+# This script sets up MakeCents by:
+#	1. making sure the user has the latest pcgs_scraper tarball
+#	2. installing requirements with pip
+#	3. changing dir to makecents subdir
+#	3. making makecents-test executable
+
+#########
+# COLOR #
+#########
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+###############################
+# latest pcgs_scraper tarball #
+###############################
+printf "${GREEN}Fetching latest pcgs_scraper version..."
+
+URL=$(curl -s "https://api.github.com/repos/ryanamannion/pcgs_scraper/releases/latest" | \
+	python3 -c "import sys, json; print(json.load(sys.stdin)['tarball_url'])")
+
+VERSION=$(echo $URL | awk -F'/' '{print $NF}')
+SAVE_DIR="pcgs_scraper-releases"
+FILE="pcgs_scraper-${VERSION}.tar.gz"
+FULL="${SAVE_DIR}/${FILE}"
+
+printf " Latest: ${VERSION}${NC}\n"
+
+if [ ! -d "./${SAVE_DIR}" ]; then
+	printf "${GREEN}First time, creating ${SAVE_DIR}... "
+	mkdir "$SAVE_DIR"
+	printf "Done${NC}\n"
+fi
+
+if [ ! -f "$FULL" ]; then
+	printf "${GREEN}Saving ${VERSION} to ${FULL}... "
+	cd $SAVE_DIR
+	wget --quiet --output-document=$FILE $URL
+	printf "Done${NC}\n"
+	cd ..
+else
+	printf "${CYAN}${FULL} already exists, continuing...${NC}\n"
+fi
+
+printf "${GREEN}Installing pcgs_scraper from ${FULL}...\n${NC}"
+pip3 install $FULL
+printf "${GREEN}Installing other requirements from requirements.txt...\n${NC}"
+sleep 2
+pip3 install -r requirements.txt
+
+printf "${GREEN}Changing dir to ./makecents\n${NC}"
+cd makecents
+printf "${GREEN}Making makecents-test executable\n${NC}"
+chmod +x "makecents-test"
+printf "${GREEN}Setup complete you can now run MakeCents from this directory with:\n\n${NC}"
+printf "${CYAN}./makecents-test${NC}\n\n"
