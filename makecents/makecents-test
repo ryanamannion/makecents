@@ -8,6 +8,12 @@ quit(){
 	echo
 	exit 0
 }
+
+if ! -v rasa &> /dev/null; then
+	printf "Command rasa not found, please ensure env is configured and run makecents-setup if necessary\n"
+	exit 0
+fi
+
 rasa run actions &
 rasa x &
 trap quit INT
