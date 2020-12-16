@@ -8,7 +8,7 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 import os
-from PIL import Image, ImageDraw, ImageFont
+# from PIL import Image, ImageDraw, ImageFont       # Rasa X bug: won't display local files
 import glob
 from datetime import datetime, date, time
 import pickle
@@ -48,26 +48,26 @@ def most_recent_guide():
 
     return price_guide
 
-
-def tbl_to_image(tbl, path='./price_utilities/table.png'):
-    """
-    Turns string for a table representation of prices into a png
-    :param tbl: string table
-    :param path: save name of table image
-    :return path: path to table image
-    """
-    font = ImageFont.truetype('./price_utilities/VeraMono.ttf', 14)
-    table_width, table_len = font.getsize_multiline(tbl)
-    # add 10 pixels for border
-    image_size = (table_width, table_len)
-    # make new image background for font, white
-    img = Image.new('RGB', image_size, color=(255, 255, 255))
-    draw_layer = ImageDraw.Draw(img)
-    anchor = (10, 10)
-    text_color = (0, 0, 0)
-    draw_layer.multiline_text(xy=anchor, text=tbl, fill=text_color)
-    img.save(path)
-    return path
+# Rasa X bug, won't display local files. This fix for table does not work for now
+# def tbl_to_image(tbl, path='./price_utilities/table.png'):
+    # """
+    # Turns string for a table representation of prices into a png
+    # :param tbl: string table
+    # :param path: save name of table image
+    # :return path: path to table image
+    # """
+    # font = ImageFont.truetype('./price_utilities/VeraMono.ttf', 14)
+    # table_width, table_len = font.getsize_multiline(tbl)
+    # # add 10 pixels for border
+    # image_size = (table_width, table_len)
+    # # make new image background for font, white
+    # img = Image.new('RGB', image_size, color=(255, 255, 255))
+    # draw_layer = ImageDraw.Draw(img)
+    # anchor = (10, 10)
+    # text_color = (0, 0, 0)
+    # draw_layer.multiline_text(xy=anchor, text=tbl, fill=text_color)
+    # img.save(path)
+    # return path
 
 
 class ActionReturnPrice(Action):
@@ -82,10 +82,17 @@ class ActionReturnPrice(Action):
                   tracker: Tracker,
                   domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        coin_entity = tracker.latest_message['entities']
+        # coin_entity = tracker.latest_message['entities']
         message = tracker.latest_message['text']
 
         validated_query = pcgs_query.validate_query(message, verbose=False)
+
+        if not validated_query:
+            msg = "I'm sorry, I could not find a valid query in your last message."
+            dispatcher.utter_message(text=msg)
+            dispatcher.utter_message(template="utter_search_help")
+            return []
+
         price_guide = most_recent_guide()
 
         results = pcgs_query.query_price_guide(validated_query, price_guide)
@@ -97,16 +104,16 @@ class ActionReturnPrice(Action):
         elif len(results) == 1:
             result = results[0]
             prices = utils.price_table(result['desig'], result['prices'])
-            price_table_img_path = tbl_to_image(prices)
+            # price_table_img_path = tbl_to_image(prices)
             msg = f"Here are the prices for {result['description']}:"
             if result['image']:
-                image_path, image_description = result["image"]
                 dispatcher.utter_message(text=msg,
-                                         image=image_path)
+                                         image=result["image"][0])
             else:
                 dispatcher.utter_message(text=msg)
-            dispatcher.utter_message(text=prices,
-                                     image="price_utilities/table.png")
+            dispatcher.utter_message(text=prices)
+            # dispatcher.utter_message(text=prices,
+                                     # image="price_utilities/table.png")
         elif len(results) > 1:
             # User query returns more than one coin result:
             #     - tell user the results
