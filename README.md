@@ -9,7 +9,7 @@ MakeCents is a dialogue system designed to help coin collectors quickly query co
 
 MakeCents is currently under development. Check back in a few days for an initial release
 
-# Installation and Testing Instructions
+## Installation and Testing Instructions
 
 1. Activate environment
 
@@ -26,4 +26,10 @@ MakeCents is currently under development. Check back in a few days for an initia
 
 4. Change directories to `makecents`
 
-5. run `source ./makecents-test` or `. ./makecents-test`
+5. make the `makecents-test` shell script executable with `chmod +x makecents-test`
+
+6. run makecents-test with `./makecents-test`
+
+7. On the left-hand side, navigate to `Talk to your bot`, and start chatting with MakeCents
+
+7. To quit, close the Rasa X tab, go back to the shell, exit with `CTRL+C`
