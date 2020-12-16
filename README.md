@@ -11,7 +11,7 @@ MakeCents is currently under development. Check back in a few days for an initia
 
 ## Installation and Testing Instructions
 
-1. `cd` into the topmost dir of this repo, `makecents`
+1. clone repo and cd into it
 
 2. Create/ activate your environment
 
