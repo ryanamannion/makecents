@@ -11,26 +11,17 @@ MakeCents is a dialogue system designed to help coin collectors quickly query co
 
 1. Clone repo and cd into it
 
-2. Create/ activate your environment
+2. Create and activate your environment
 
-3. `pcgs_scraper` package
-	1. make `latest-release` executable with `chmod +x latest-release`
-	2. run `./latest-release`
-	3. install latest version with `pip install pcgs_scraper-releases/pcgs_scraper-vX.Y.Z.tar.gz`
+	* `python3 -m venv venv`
+	* `. venv/bin/activate`
 
-4. Other dependencies
-	1. `pip install -r requirements.txt`
-	2. `pip list | grep rasa` should reveal:
-		* `rasa 2.1.3`
-		* `rasa-x`
-		* `rasa-sdk`
+3. make `makecents-setup` executable and run with `chmod +x makecents-setup && . makecents-setup`
 
-5. Change directories to `./makecents/`
+	* `makecents-setup` handles getting the latest pcgs_scraper release and pip installing all dependencies
 
-6. Make the `makecents-test` shell script executable with `chmod +x makecents-test`
+4. Run `./makecents-test`, a browser window should open
 
-7. Run `./makecents-test`
+5. On the left-hand side, navigate to `Talk to your bot`, and start chatting with MakeCents
 
-8. On the left-hand side, navigate to `Talk to your bot`, and start chatting with MakeCents
-
-9. To quit, close the Rasa X tab, go back to the shell, exit with `CTRL+C`
+6. To quit, close the Rasa X tab, go back to the shell, exit with `CTRL+C`

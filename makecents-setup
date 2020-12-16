@@ -46,10 +46,10 @@ else
 fi
 
 printf "${GREEN}Installing pcgs_scraper from ${FULL}...\n${NC}"
-pip3 install $FULL
+pip install $FULL
 printf "${GREEN}Installing other requirements from requirements.txt...\n${NC}"
 sleep 2
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 
 printf "${GREEN}Changing dir to ./makecents\n${NC}"
 cd makecents
