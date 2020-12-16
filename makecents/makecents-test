@@ -1,8 +1,14 @@
 #!/bin/bash
 
-rasa run actions & 
-ACT_PROC_ID=$!
+quit(){
+	kill %1 %2
+	wait
+	echo
+	echo "Successfully exited makecents-test"
+	echo
+	exit 0
+}
+rasa run actions &
 rasa x &
-X_PROC_ID=$!
+trap quit INT
 wait
-kill $ACT_PROC_ID
