@@ -5,11 +5,11 @@
 <!-- Font for logo is IM Fell English SC from google price_utilities price_utilities.google.com/specimen/IM+Fell+English+SC -->
 <!-- Coin graphic from https://etc.usf.edu/clipart/44400/44401/44401_penny.htm -->
 
-MakeCents is a dialogue system designed to help coin collectors quickly query coin prices. 
+MakeCents is a dialogue system designed to help coin collectors quickly query coin prices, and is built using Rasa.
 
 ## Installation and Testing Instructions
 
-1. clone repo and cd into it
+1. Clone repo and cd into it
 
 2. Create/ activate your environment
 
@@ -27,9 +27,9 @@ MakeCents is a dialogue system designed to help coin collectors quickly query co
 
 5. Change directories to `./makecents/`
 
-6. make the `makecents-test` shell script executable with `chmod +x makecents-test`
+6. Make the `makecents-test` shell script executable with `chmod +x makecents-test`
 
-7. run `./makecents-test`
+7. Run `./makecents-test`
 
 8. On the left-hand side, navigate to `Talk to your bot`, and start chatting with MakeCents
 
