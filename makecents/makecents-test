@@ -9,12 +9,25 @@ quit(){
 	exit 0
 }
 
-if ! -v rasa &> /dev/null; then
-	printf "Command rasa not found, please ensure env is configured and run makecents-setup if necessary\n"
+# if ! -v rasa &> /dev/null; then
+	# printf "Command rasa not found, please ensure env is configured and run makecents-setup if necessary\n"
+	# exit 0
+# fi
+
+echo "enter 'shell' to run MakeCents in shell mode or 'x' to run in the browser"
+echo -n "> "
+read MODE
+
+if [ "$MODE" == "shell" ]; then
+	rasa run actions &
+	rasa shell &
+elif [ "$MODE" == "x" ]; then
+	rasa run actions &
+	rasa x &
+else
+	printf "response was neither 'shell' nor 'x'... quitting\n"
 	exit 0
 fi
 
-rasa run actions &
-rasa x &
 trap quit INT
 wait
