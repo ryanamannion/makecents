@@ -11,25 +11,28 @@ MakeCents is currently under development. Check back in a few days for an initia
 
 ## Installation and Testing Instructions
 
-1. Activate environment
+1. `cd` into the topmost dir of this repo, `makecents`
 
-2. `pcgs_scraper` package
-	1. download the latest release at `https://github.com/ryanamannion/pcgs_scraper/releases`
-	2. `pip install path/to/pcgs_scraper-X.Y.Z.tar.gz`
+2. Create/ activate your environment
 
-3. Other dependencies
+3. `pcgs_scraper` package
+	1. make `setup_pcgs` executable with `chmod +x setup_pcgs`
+	2. run `./setup_pcgs`
+	3. install latest version with `pip install pcgs_scraper-releases/pcgs_scraper-vX.Y.Z.tar.gz`
+
+4. Other dependencies
 	1. `pip install -r requirements.txt`
 	2. `pip list | grep rasa` should reveal:
 		* `rasa 2.1.3`
 		* `rasa-x`
 		* `rasa-sdk`
 
-4. Change directories to `makecents`
+5. Change directories to `./makecents/`
 
-5. make the `makecents-test` shell script executable with `chmod +x makecents-test`
+6. make the `makecents-test` shell script executable with `chmod +x makecents-test`
 
-6. run makecents-test with `./makecents-test`
+7. run `./makecents-test`
 
-7. On the left-hand side, navigate to `Talk to your bot`, and start chatting with MakeCents
+8. On the left-hand side, navigate to `Talk to your bot`, and start chatting with MakeCents
 
-7. To quit, close the Rasa X tab, go back to the shell, exit with `CTRL+C`
+9. To quit, close the Rasa X tab, go back to the shell, exit with `CTRL+C`
