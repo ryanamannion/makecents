@@ -16,8 +16,8 @@ MakeCents is currently under development. Check back in a few days for an initia
 2. Create/ activate your environment
 
 3. `pcgs_scraper` package
-	1. make `latest_releases` executable with `chmod +x latest_releases`
-	2. run `./latest_releases`
+	1. make `latest_release` executable with `chmod +x latest_release`
+	2. run `./latest_release`
 	3. install latest version with `pip install pcgs_scraper-releases/pcgs_scraper-vX.Y.Z.tar.gz`
 
 4. Other dependencies
