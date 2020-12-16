@@ -1,0 +1,10 @@
+# MakeCents .gitignore
+
+# MakeCents files
+makecents/price_utilities/*
+pcgs_scraper-releases
+
+# python files
+*__pycache__*
+.idea/*
+
