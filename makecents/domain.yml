@@ -6,9 +6,16 @@ intents:
 - goodbye
 - affirm
 - deny
+- thank
 - bot_challenge
 - coin_query
-- query_coin
+- options
+- cancel
+- unsure
+- indifferent
+- amused
+- chitchat
+- nlu_fallback
 entities:
 - coin
 responses:
@@ -21,12 +28,46 @@ responses:
   - text: 'TIP: Make sure to always include a year (YYYY) and a denomination (e.g.
       1C, cent, penny, etc.). You can also specify the mint with a hyphen after the
       year (YYYY-M, e.g. 1909-S)'
+  utter_abilities:
+  - text: "I can help you figure out prices for any US coin! \nStart by asking me\
+      \ for the price of a coin with a year and denomination (e.g. 1997 penny)"
   utter_goodbye:
   - text: Goodbye
+  utter_urwelcome:
+  - text: You're welcome!
+  - text: Sure thing!
+  - text: Not a problem!
+  - text: Any time!
+  - text: Of course!
+  - text: Don't sweat it!
   utter_iamabot:
-  - image: http://images.pcgs.com/CoinFacts/34015336_77365055_800x800.jpg
-    text: I am indeed a bot! I was built by Ryan Mannion and I am powered by Rasa.
-  utter_query_coin:
-  - text: this is a placeholder for a coin query.
+  - text: I am indeed a bot! I was built by Ryan Mannion and I am powered by Rasa.
+  utter_retry_choice:
+  - text: Please make your query again and choose one of the options.
+  utter_also_amused:
+  - text: I like coins too!
+  - text: Aren't coins fun?
+  - text: I love coins, hope you find some good ones!
+  utter_stay_on_topic:
+  - text: let's keep this about coins, shall we?
+  - text: I'm only programmed to help with coins!
+  utter_help_unsure:
+  - text: 'If you are unsure what the grades and designations mean, check out this
+      helpful guide: https://www.pcgs.com/grades'
+  utter_default:
+  - text: Sorry, I'm not sure I understand. Can you rephrase that?
+  - text: I didn't quite get that. Can you rephrase that?
+  - text: I'm sorry, I didn't quite get that. Can you try rephrasing?
 actions:
 - action_return_price
+- utter_help_unsure
+- utter_stay_on_topic
+- utter_also_amused
+- utter_retry_choice
+- utter_iamabot
+- utter_urwelcome
+- utter_goodbye
+- utter_abilities
+- utter_search_help
+- utter_get_started
+- utter_greet
